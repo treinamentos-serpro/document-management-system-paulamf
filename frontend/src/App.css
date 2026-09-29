@@ -1,0 +1,152 @@
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #f4f6fb;
+  color: #1f2933;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.app__title {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #1c3faa;
+}
+
+.app__user {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+}
+
+.app__user label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.app__user input {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #c7d0dd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.app__hint {
+  color: #5a6472;
+}
+
+.app__section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+}
+
+.app__section h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.upload-form__label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.upload-form__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.upload-form button {
+  background: #1c3faa;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.upload-form button:disabled {
+  background: #92a1c9;
+  cursor: not-allowed;
+}
+
+.upload-form button:not(:disabled):hover {
+  background: #16308a;
+}
+
+.upload-form__error {
+  color: #c0392b;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.document-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.document-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.document-list__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.document-list__name {
+  font-weight: 600;
+}
+
+.document-list__meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.document-list__status {
+  color: #6b7280;
+}
+
+.document-list__status--error {
+  color: #c0392b;
+}
+
+.download-button {
+  background: #eef1fb;
+  color: #1c3faa;
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.download-button:hover {
+  background: #dde4f8;
+}
