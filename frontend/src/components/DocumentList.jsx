@@ -11,7 +11,7 @@ function formatDate(isoDate) {
   return new Date(isoDate).toLocaleString('pt-BR');
 }
 
-export default function DocumentList({ documents, isLoading, error }) {
+export default function DocumentList({ documents, userId, isLoading, error }) {
   if (isLoading) {
     return <p className="document-list__status">Carregando documentos...</p>;
   }
@@ -34,7 +34,7 @@ export default function DocumentList({ documents, isLoading, error }) {
               {formatSize(document.size)} • {formatDate(document.createdAt)}
             </span>
           </div>
-          <DownloadButton documentId={document.id} fileName={document.originalName} />
+          <DownloadButton documentId={document.id} fileName={document.originalName} userId={userId} />
         </li>
       ))}
     </ul>

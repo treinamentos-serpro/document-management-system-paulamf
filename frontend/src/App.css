@@ -137,14 +137,21 @@ body {
 }
 
 .download-button {
+  border: 0;
   background: #eef1fb;
   color: #1c3faa;
   border-radius: 8px;
   padding: 0.4rem 0.9rem;
-  text-decoration: none;
+  font: inherit;
   font-size: 0.85rem;
   font-weight: 600;
+  cursor: pointer;
   transition: background 0.2s ease;
+}
+
+.download-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
 }
 
 .download-button:hover {

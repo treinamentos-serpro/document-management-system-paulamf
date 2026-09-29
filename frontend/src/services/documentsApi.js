@@ -34,3 +34,24 @@ export async function listDocuments(userId) {
 export function getDownloadUrl(documentId) {
   return `${API_BASE_URL}/documents/${documentId}/download`;
 }
+
+export async function downloadDocument(documentId, userId, fileName) {
+  const response = await fetch(getDownloadUrl(documentId), {
+    headers: { 'X-User-Id': userId },
+  });
+
+  if (!response.ok) {
+    const data = await response.json().catch(() => null);
+    throw new Error(data?.erro || 'Erro ao baixar o documento');
+  }
+
+  const blob = await response.blob();
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = fileName;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 0);
+}

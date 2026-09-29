@@ -64,7 +64,7 @@ export default function App() {
 
           <section className="app__section">
             <h2>Meus documentos</h2>
-            <DocumentList documents={documents} isLoading={isLoading} error={error} />
+            <DocumentList documents={documents} userId={userId} isLoading={isLoading} error={error} />
           </section>
         </>
       ) : (

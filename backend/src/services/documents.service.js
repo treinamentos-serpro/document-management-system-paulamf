@@ -30,9 +30,12 @@ function listDocumentsByOwner(ownerId) {
   return documentsRepository.findAllByOwner(ownerId);
 }
 
-function getDocumentById(id) {
+function getDocumentById(id, ownerId) {
   const document = documentsRepository.findById(id);
   if (!document) {
+    throw new Error('documento não encontrado');
+  }
+  if (ownerId && document.ownerId !== ownerId) {
     throw new Error('documento não encontrado');
   }
   return document;
